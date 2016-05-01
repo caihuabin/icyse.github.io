@@ -39,11 +39,6 @@ table {
 	clear: both;
 }
 
-a {
-    color: #00B7FF;
-    text-decoration: none;
-}
-
 .bgcolor-1 { background: #f0efee; }
 .bgcolor-2 { background: #f9f9f9; }
 .bgcolor-3 { background: #e8e8e8; }/*light grey*/
