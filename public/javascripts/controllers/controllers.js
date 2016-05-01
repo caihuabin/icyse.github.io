@@ -1,35 +1,35 @@
 'use strict';
 var app = angular.module('mean', ['ngRoute', 'ngAnimate', 'mean.directives', 'mean.services', 'mean.configs']);
 
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', 'USER_ROLES', function($routeProvider, $locationProvider, $httpProvider, USER_ROLES) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider.
         when('/about',{
             templateUrl:'/about'
         }).
         when('/contact',{
             templateUrl:'/contact'
-        }).when('/blog', {
+        }).when('/', {
             controller: 'BlogListCtrl',
             resolve: {
                 posts: ["MultiPostLoader", function(MultiPostLoader) {
-                    return function(params){return MultiPostLoader(params);}
+                    return MultiPostLoader();
                 }]
             },
-            templateUrl:'/blog/index'
-        }).when('/blog/:postId', {
+            templateUrl:'/views/blog/index.html'
+        }).when('/:alias', {
             controller: 'BlogShowCtrl',
             resolve: {
                 post: ["PostLoader", function(PostLoader) {
                     return PostLoader();
                 }]
             },
-            templateUrl:'/blog/show'
-        }).otherwise({redirectTo:'/blog'});
+            templateUrl:'/views/blog/show.html'
+        }).otherwise({redirectTo:'/'});
 
         /*$locationProvider.html5Mode(true);*/
 }]);
 
-app.run(['$rootScope', '$location', 'AuthService', 'AUTH_EVENTS', function($rootScope, $location, AuthService, AUTH_EVENTS) {
+app.run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function(evt, next, current) {
         NProgress.start();
         var routeData = !!next.$$route ? next.$$route.data : null;
@@ -44,49 +44,31 @@ app.run(['$rootScope', '$location', 'AuthService', 'AUTH_EVENTS', function($root
     });
 }]);
 app.controller('ApplicationController', ['$scope', function ($scope) {
-    $scope.BlogCount = null;
-    $scope.currentRoutePath = '/blog';
-
+    $scope.currentRoutePath = '/';
     $scope.$on('$routeChangeSuccess', function(evt, next, previous) {
         if(!!next.$$route){
             $scope.currentRoutePath = next.$$route.originalPath;
         }
-        
     });
-
-    $scope.setBlogCount = function (count) {
-        $scope.BlogCount = count;
-    };
 }]);
 
 app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($scope, posts, CUSTOM_EVENTS) {
-    /*$scope.posts = posts({});*/
-    $scope.posts = [];
-    function fetchPromise(params){
-        return posts(params).then(function(result){
-            $scope.posts = $scope.posts.concat(result);
-            $scope.setBlogCount($scope.posts.length);
-        },function(error){
-
-        });
-    };
-    fetchPromise({skip: 0, limit: 12});
-
+    $scope.postsList = posts.data.slice(0, 2);
     $scope.$on(CUSTOM_EVENTS.loadMore, function(data){
         $scope.$emit(CUSTOM_EVENTS.loading);
         NProgress.start();
         setTimeout(function(){
-            fetchPromise({skip: $scope.posts.length, limit: 12}).then(function(){
-                $scope.$emit(CUSTOM_EVENTS.loaded);
-                NProgress.done();
-            });
-        }, 500);
-        
+            var len = $scope.postsList.length;
+            $scope.postsList = $scope.postsList.concat(posts.data.slice(len, len+2));
+            $scope.$apply();
+            $scope.$emit(CUSTOM_EVENTS.loaded);
+            NProgress.done();
+        }, 800);
     });
 
 }]);
-app.controller('BlogShowCtrl', ['$scope', '$location', 'post', 'Post', 'AuthService', function($scope, $location, post, Post, AuthService) {
-    $scope.post = new Post(post.data);
+app.controller('BlogShowCtrl', ['$scope', '$location', 'post', function($scope, $location, post) {
+    $scope.post = post.data;
 }]);
 
 app.controller('CommentCtrl', ['$scope', 'Comment', function($scope, Comment) {

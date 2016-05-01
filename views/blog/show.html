@@ -1,0 +1,73 @@
+<div class="container">
+    <section class="blog-content">
+        <header class="blog-content-header pure-g">
+            <div class="pure-u-2-3">
+                <h2 class="blog-content-title">{{ post.title }}</h2>
+                <p class="blog-content-subtitle">By 
+                    <a href="" class="blog-author">{{ post.user.username }} </a> at 
+                    <span>{{ post.createdTime }}</span> 
+                </p>
+                <p class="blog-content-source" ng-if="!!post.source">
+                    From 
+                    <a href="{{ post.url }}">{{ post.source }}</a> 
+                </p>
+            </div>
+            <div class="blog-content-controls pure-u-1-3">
+                <button class="secondary-button pure-button" scroll-into="commentText", ng-click="scrollInto()">Reply {{ post.commentCount }}</button>
+                <button class="secondary-button pure-button">View {{ post.viewCount }}</button>
+                <button class="secondary-button pure-button" ng-click="vote()">Vote {{ post.voteCount }}</button>
+            </div>
+        </header>
+        <section class="blog-content-body">
+            <div class="blog">
+                <p class="blog-summary">{{ post.summary }}</p>
+                <div class="markdown-content" mark-down ng-bind-html="previewContent"></div>
+            </div>
+        </section>
+        <footer class="blog-content-footer">
+            <header class="blog-comment-header"></header>
+            <section class="blog-comment-content">
+                <div>
+                    <div class="cell animate-pop-up" ng-repeat="comment in post.commentList">
+                        <div class="comment-box">
+                            <div class="avatar">
+                                <a href="" ng-href="/#/user/{{comment.user._id}}">
+                                    <img src="" alt="" ng-src="{{comment.user.avatar}}">
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <div class="comment-content typo">
+                                    {{comment.content}}
+                                </div>
+                                <div class="comment-info">
+                                    <span class="info-item">
+                                        <i class="icon-user"></i>
+                                        <a href="" ng-href="/#/user/{{comment.user._id}}">
+                                            {{comment.user.username}}
+                                        </a> 
+                                    </span>
+                                    <span class="info-item">
+                                        <i class="icon-clock"></i>
+                                        <span>{{comment.createdTime}}</span>
+                                    </span>
+                                    <span class="pull-right action">
+                                        <i class="icon-comment-1"></i>
+                                        <span>Reply</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell">
+                        <form action="" class="pure-form pure-form-stacked" method="post" name="commentForm" ng-controller="CommentCtrl" ng-submit="save()" novalidate>
+                            <textarea name="content" id="commentText" cols="30" rows="6" class="pure-input-1" placeholder="submit the comment" ng-disabled="!currentUser" ng-model="comment.content" required="">
+                            </textarea>
+                            <input type="submit" class="pure-button pure-button-primary" value="Reply" ng-disabled="commentForm.content.$invalid || !currentUser">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </section>
+</div>

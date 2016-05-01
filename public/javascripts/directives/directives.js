@@ -13,23 +13,6 @@ directives.directive('markDown', ['$sce', function($sce){
     }
 }]);
 
-directives.directive('menuLink', ['$window', 'DOM_EVENTS', function($window, DOM_EVENTS) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var elem = element[0];
-
-            elem[DOM_EVENTS.onclick] = function(e){
-                var active = 'active';
-                e.preventDefault();
-                $window.document.getElementById('layout').classList.toggle(active);
-                $window.document.getElementById('menu').classList.toggle(active);
-                this.classList.toggle(active);
-            };
-            
-        }
-    };
-}]);
 directives.directive('whenScrolled', ['DOM_EVENTS', 'CUSTOM_EVENTS', '$window', function(DOM_EVENTS, CUSTOM_EVENTS, $window) {
     return {
         restrict: 'A',
