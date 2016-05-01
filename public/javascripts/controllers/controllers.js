@@ -4,10 +4,10 @@ var app = angular.module('mean', ['ngRoute', 'ngAnimate', 'mean.directives', 'me
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider.
         when('/about',{
-            templateUrl:'/about'
+            templateUrl:'/views/about/index.html'
         }).
         when('/contact',{
-            templateUrl:'/contact'
+            templateUrl:'/views/about/contact.html'
         }).when('/', {
             controller: 'BlogListCtrl',
             resolve: {
