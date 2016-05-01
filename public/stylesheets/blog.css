@@ -162,8 +162,8 @@ h3 {
     padding: 1em 0;
 }
 .footer a {
-    color: #ccc;
-    font-size: 80%;
+    /* color: #ccc;
+    font-size: 80%; */
 }
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
