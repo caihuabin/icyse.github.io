@@ -255,7 +255,7 @@ a.blog-author{
     font-size: 80%;
 }
 
-img.hover(:hover) {
+img.hover:hover {
     box-shadow: 0 1px 5px rgba(34, 25, 25, .8);
     -moz-box-shadow: 0 1px 5px rgba(34, 25, 25, .8);
     -webkit-box-shadow: 0 1px 5px rgba(34, 25, 25, .8);
@@ -335,7 +335,7 @@ article.about-content, article.contact-content{
     line-height: 22px;
     word-break: break-all;
     word-wrap: break-word;
-    margin-left: 76px;
+    margin-left: 64px;
     min-height: 48px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 0 #F5EBEB;

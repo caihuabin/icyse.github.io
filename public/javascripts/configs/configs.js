@@ -17,5 +17,17 @@ configs.constant('CUSTOM_EVENTS', {
     loaded: 'loaded',
     loadOver: 'load-over',
     blogPreviewOpen: 'blog-preview-open',
-    blogPreviewClose: 'blog-preview-close'
+    blogPreviewClose: 'blog-preview-close',
+    changeLanguage: 'change-language'
+});
+
+configs.constant('LOCALE_LANGUAGE', {
+    'zh_CN' : {
+        'ENGLISH': '英文',
+        'CHINESE': '中文'
+    },
+    'en_US' : {
+        'ENGLISH': 'ENGLISH',
+        'CHINESE': 'CHINESE'
+   }
 });

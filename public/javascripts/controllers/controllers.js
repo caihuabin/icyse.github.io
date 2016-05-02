@@ -1,7 +1,7 @@
 'use strict';
-var app = angular.module('mean', ['ngRoute', 'ngAnimate', 'mean.directives', 'mean.services', 'mean.configs']);
+var app = angular.module('mean', ['ngRoute', 'ngAnimate', 'pascalprecht.translate', 'mean.directives', 'mean.services', 'mean.configs', 'mean.filters']);
 
-app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
+app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateProvider', 'LOCALE_LANGUAGE', function($routeProvider, $locationProvider, $httpProvider, $translateProvider, LOCALE_LANGUAGE) {
     $routeProvider.
         when('/about',{
             templateUrl:'/views/about/index.html'
@@ -23,6 +23,11 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($ro
             templateUrl:'/views/blog/show.html'
         }).otherwise({redirectTo:'/'});
 
+        $translateProvider.translations('en_US', LOCALE_LANGUAGE.en_US);
+        $translateProvider.translations('zh_CN', LOCALE_LANGUAGE.zh_CN);
+        $translateProvider.preferredLanguage('en_US');
+        $translateProvider.useSanitizeValueStrategy('escapeParameters');
+
         /*$locationProvider.html5Mode(true);*/
 }]);
 
@@ -39,14 +44,25 @@ app.run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('$routeChangeError', function(current, previous, rejection) {
         NProgress.done();
     });
+
 }]);
-app.controller('ApplicationController', ['$scope', function ($scope) {
+app.controller('ApplicationController', ['$scope', '$rootScope', '$translate', 'CUSTOM_EVENTS', function ($scope, $rootScope, $translate, CUSTOM_EVENTS) {
     $scope.currentRoutePath = '/';
     $scope.$on('$routeChangeSuccess', function(evt, next, previous) {
         if(!!next.$$route){
             $scope.currentRoutePath = next.$$route.originalPath;
         }
     });
+    $scope.changeLanguage = function (lang) {
+        if(lang === 'en_US'){
+            $translate.use('en_US');
+            $rootScope.$broadcast(CUSTOM_EVENTS.changeLanguage, 'en_US');
+        }
+        else{
+            $translate.use('zh_CN');
+            $rootScope.$broadcast(CUSTOM_EVENTS.changeLanguage, 'zh_CN');
+        }
+    };
 }]);
 
 app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($scope, posts, CUSTOM_EVENTS) {
