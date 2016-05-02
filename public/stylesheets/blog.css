@@ -153,7 +153,27 @@ h3 {
     .post-category-JavaScript {
         background: #df2d4f;
     }
-
+    .post-category-CSS {
+        background: #e8e8e8;
+    }
+    .post-category-NodeJs {
+        background: #df6659;
+    }
+    .post-category-AngularJs {
+        background: #2fa8ec;
+    }
+    .post-category-HTML {
+        background: #d0d6d6;
+    }
+    .post-category-Canvas {
+        background: #64448f;
+    }
+    .post-category-Git {
+        background: #3498DB;
+    }
+    .post-category-Interview {
+        background: #3755ad;
+    }
 .post-images {
     margin: 1em 0;
 }

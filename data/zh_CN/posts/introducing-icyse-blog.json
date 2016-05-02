@@ -1,8 +1,8 @@
 {
 	"title": "简介 Icyse Blog",
     "alias": "introducing-icyse-blog",
-    "summary": "Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
-    "content": "昨天, \n\n    git init\n![no image, can talk](/public/images/avatar.ico \"by Cai\") we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
+    "summary": "ICYSE-BLOG 是一个使用AngularJs写的静态博客系统",
+    "content": "你可以点击 [https://github.com/icyse/icyse.github.io](https://github.com/icyse/icyse.github.io) 找到所有最新的源码。\n\n如果你觉得该项目对你有所帮助，请为该项目star哦；或者如果你找到该项目的一些bug，可以提交issues哦；再者你有更好的想法，也可以为该项目贡献代码。感谢你的支持！",
     "source": "",
     "url": "",
     "user": {
@@ -12,14 +12,14 @@
     "categoryList": ["icyse", "wiki"],
     "commentList": [
         {
-            "content": "Yesterday at CSSConf, we launched Pure – a new CSS library.",
+            "content": "这是第一个评论。",
             "user": {"avatar": "/public/images/avatar.ico", "username": "Icyse"},
             "voteCount": 0,
             "createdTime": "2016-01-02 10:00",
             "updatedTime": "2016-01-02 10:00"
         },
         {
-            "content": "Yesterday at CSSConf, we launched Pure – a new CSS library.",
+            "content": "这是第二个评论。",
             "user": {"avatar": "/public/images/avatar.png", "username": "Unknown"},
             "voteCount": 0,
             "createdTime": "2016-01-02 10:00",
@@ -27,7 +27,7 @@
         }
     ],
     "viewCount": 0,
-    "commentCount": 0,
+    "commentCount": 2,
     "voteCount": 0,
     "createdTime": "2016-01-01 10:00",
     "updatedTime": "2016-01-01 10:00"
