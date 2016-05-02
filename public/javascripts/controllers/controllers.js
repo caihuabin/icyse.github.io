@@ -5,9 +5,6 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function($ro
     $routeProvider.
         when('/about',{
             templateUrl:'/views/about/index.html'
-        }).
-        when('/contact',{
-            templateUrl:'/views/about/contact.html'
         }).when('/', {
             controller: 'BlogListCtrl',
             resolve: {

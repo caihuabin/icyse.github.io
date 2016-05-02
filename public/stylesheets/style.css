@@ -322,8 +322,8 @@ article.about-content, article.contact-content{
 }
 .comment-box .avatar img {
     max-width: none;
-    height: 64px;
-    width: 64px;
+    height: 48px;
+    width: 48px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -335,8 +335,8 @@ article.about-content, article.contact-content{
     line-height: 22px;
     word-break: break-all;
     word-wrap: break-word;
-    margin-left: 92px;
-    min-height: 64px;
+    margin-left: 76px;
+    min-height: 48px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 0 #F5EBEB;
     border: 1px solid #F7F3F3;
