@@ -144,7 +144,7 @@ table {
 }
 /* Blog Content Styles */
 .blog-content-header, .blog-content-body, .blog-content-footer {
-    padding: 1em 2em;
+    padding: 1em;
     /* 加padding阻止外边距折叠, 触发bfc亦可*/
     /* overflow: auto; */
 }
