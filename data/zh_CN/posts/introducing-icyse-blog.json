@@ -1,10 +1,13 @@
 {
-	"title": "Introducing Icyse Blog",
+	"title": "简介 Icyse Blog",
     "alias": "introducing-icyse-blog",
     "summary": "Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
-    "content": "Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
+    "content": "昨天, \n\n    git init\n![no image, can talk](/public/images/avatar.ico \"by Cai\") we launched Pure – a new CSS library. Phew! Here are the slides from the presentation. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.",
     "source": "",
     "url": "",
+    "user": {
+            "username": "Icyse"
+        },
     "imgList": [],
     "categoryList": ["icyse", "wiki"],
     "commentList": [

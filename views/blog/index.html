@@ -6,7 +6,8 @@
                 <img class="post-avatar" alt="Icyse&#x27;s avatar" height="48" width="48" ng-src="/public/images/avatar.ico">
                 <h2 class="post-title"><a ng-href="/#/{{post.alias}}">{{post.title}}</a></h2>
                 <p class="post-meta">
-                    By <a ng-href="/#/" class="post-author">Icyse</a> under <a class="post-category post-category-{{category}} animate-pop-up" href="#" ng-repeat="category in post.categoryList">{{category}}</a>
+                    By <a ng-href="/#/" class="post-author">Icyse</a> under <a class="post-category post-category-{{category}} animate-pop-up" href="#" ng-repeat="category in post.categoryList">{{category}}</a> at 
+                    <span>{{post.createdTime}}</span>
                 </p>
             </header>
             <div class="post-description">

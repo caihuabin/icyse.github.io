@@ -4,9 +4,9 @@ var services = angular.module('mean.services',
     ['ngResource', 'mean.configs']);
 
 services.factory('MultiPostLoader', ['$http', '$q', function($http, $q) {
-    return function() {
+    return function(params) {
         var delay = $q.defer();
-        return $http.get('/data/posts.json',{ cache: true }).success(function(result){
+        return $http.get(params.url, { cache: true }).success(function(result){
             delay.resolve(result);
         }).error(function(){
             delay.reject('Unable to fetch posts');
@@ -15,9 +15,9 @@ services.factory('MultiPostLoader', ['$http', '$q', function($http, $q) {
 }]);
 
 services.factory('PostLoader', ['$http', '$route', '$q', function($http, $route, $q) {
-    return function() {
+    return function(params) {
         var delay = $q.defer();
-        return $http.get('/data/posts/' + $route.current.params.alias + '.json',{ cache: true }).success(function(result){
+        return $http.get(params.url + $route.current.params.alias + '.json',{ cache: true }).success(function(result){
             delay.resolve(result);
         }).error(function(){
             delay.reject('Unable to fetch post '  + $route.current.params.alias);

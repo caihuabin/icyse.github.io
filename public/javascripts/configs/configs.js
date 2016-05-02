@@ -21,7 +21,7 @@ configs.constant('CUSTOM_EVENTS', {
     changeLanguage: 'change-language'
 });
 
-configs.constant('LOCALE_LANGUAGE', {
+configs.constant('LOCALE_LANGUAGES', {
     'zh_CN' : {
         'ENGLISH': '英文',
         'CHINESE': '中文'

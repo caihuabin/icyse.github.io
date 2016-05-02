@@ -5,10 +5,13 @@ var directives = angular.module('mean.directives', ['mean.configs']);
 directives.directive('markDown', ['$sce', function($sce){
     return {
         restrict: 'A',
-        link: function(scope){
-            if(scope.post.content){
-                scope.previewContent = $sce.trustAsHtml(markdown.toHTML(scope.post.content));
-            }
+        require: 'ngModel',
+        link: function(scope, elem, attrs, ctrl){
+            scope.$watch(attrs.ngModel, function() {
+                if(scope.post && scope.post.content){
+                    scope.previewContent = $sce.trustAsHtml(markdown.toHTML(scope.post.content));
+                }
+            });
         }
     }
 }]);

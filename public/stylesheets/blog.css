@@ -87,6 +87,10 @@ h3 {
     border: 2px solid rgb(61, 146, 201);
     text-decoration: none;
 }
+.nav-item a.active{
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
 
 .content-subhead {
     text-transform: uppercase;
