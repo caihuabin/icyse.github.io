@@ -92,6 +92,16 @@ directives.directive('scrollInto', ['$window', function ($window) {
         }
     }
 }]);
+directives.directive('lazyLoad', ['$window', function ($window) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element[0].onload = function(){
+                element[0].classList.add('show');
+            }
+        }
+    }
+}]);
 directives.directive('focus', function() {
     return {
         link: function(scope, element, attrs) {

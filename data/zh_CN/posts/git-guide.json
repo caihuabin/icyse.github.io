@@ -25,7 +25,7 @@
             "src": "/public/uploads/images/wade3.jpg"
         }
     ],
-    "categoryList": ["Uncategorized"],
+    "categoryList": ["Git"],
     "commentList": [
         {
             "content": "这是一个评论。",
