@@ -4,7 +4,7 @@ var app = angular.module('icyse-blog', ['ngRoute', 'ngAnimate', 'pascalprecht.tr
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateProvider', 'LOCALE_LANGUAGES', function($routeProvider, $locationProvider, $httpProvider, $translateProvider, LOCALE_LANGUAGES) {
     $routeProvider.
         when('/about',{
-            templateUrl:'/views/about/index'
+            templateUrl:'/views/about/index.html'
         }).when('/', {
             controller: 'BlogListCtrl',
             resolve: {
@@ -12,7 +12,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateP
                     return function(params){return MultiPostLoader(params);}
                 }]
             },
-            templateUrl:'/views/blog/index'
+            templateUrl:'/views/blog/index.html'
         }).when('/:alias', {
             controller: 'BlogShowCtrl',
             resolve: {
@@ -20,7 +20,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateP
                     return function(params){return PostLoader(params);}
                 }]
             },
-            templateUrl:'/views/blog/show'
+            templateUrl:'/views/blog/show.html'
         }).otherwise({redirectTo:'/'});
 
         $translateProvider.translations('en_US', LOCALE_LANGUAGES.en_US);
