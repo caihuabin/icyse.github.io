@@ -1,7 +1,7 @@
 'use strict';
 
-var services = angular.module('mean.services',
-    ['ngResource', 'mean.configs']);
+var services = angular.module('icyse-blog.services',
+    ['ngResource', 'icyse-blog.configs']);
 
 services.factory('MultiPostLoader', ['$http', '$q', function($http, $q) {
     return function(params) {

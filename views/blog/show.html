@@ -59,9 +59,9 @@
 
                     <div class="cell">
                         <form action="" class="pure-form pure-form-stacked" method="post" name="commentForm" ng-controller="CommentCtrl" ng-submit="save()" novalidate>
-                            <textarea name="content" id="commentText" cols="30" rows="6" class="pure-input-1" placeholder="submit the comment" ng-disabled="!currentUser" ng-model="comment.content" required="">
+                            <textarea name="content" id="commentText" cols="30" rows="6" class="pure-input-1" placeholder="submit the comment" ng-disabled="true" ng-model="comment.content" required="">
                             </textarea>
-                            <input type="submit" class="pure-button pure-button-primary" value="Reply" ng-disabled="commentForm.content.$invalid || !currentUser">
+                            <input type="submit" class="pure-button pure-button-primary" value="Reply" ng-disabled="commentForm.content.$invalid">
                         </form>
                     </div>
                 </div>

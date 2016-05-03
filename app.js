@@ -4,7 +4,21 @@ var app = express();
 // middleware
 // uncomment after placing your favicon in /public
 app.use(express.static(__dirname));
+app.set('views', __dirname);
+app.set('view engine', 'jade');
 
+app.get('/', function(req, res, next){
+    res.render('index');
+});
+app.get('/views/about/index', function(req, res, next){
+    res.render('views/about/index');
+});
+app.get('/views/blog/index', function(req, res, next){
+    res.render('views/blog/index');
+});
+app.get('/views/blog/show', function(req, res, next){
+    res.render('views/blog/show');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

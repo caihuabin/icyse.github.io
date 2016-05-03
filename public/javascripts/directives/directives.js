@@ -1,6 +1,6 @@
 'use strict';
 
-var directives = angular.module('mean.directives', ['mean.configs']);
+var directives = angular.module('icyse-blog.directives', ['icyse-blog.configs']);
 
 directives.directive('markDown', ['$sce', function($sce){
     return {

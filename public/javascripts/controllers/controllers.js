@@ -1,10 +1,10 @@
 'use strict';
-var app = angular.module('mean', ['ngRoute', 'ngAnimate', 'pascalprecht.translate', 'mean.directives', 'mean.services', 'mean.configs', 'mean.filters']);
+var app = angular.module('icyse-blog', ['ngRoute', 'ngAnimate', 'pascalprecht.translate', 'icyse-blog.directives', 'icyse-blog.services', 'icyse-blog.configs', 'icyse-blog.filters']);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateProvider', 'LOCALE_LANGUAGES', function($routeProvider, $locationProvider, $httpProvider, $translateProvider, LOCALE_LANGUAGES) {
     $routeProvider.
         when('/about',{
-            templateUrl:'/views/about/index.html'
+            templateUrl:'/views/about/index'
         }).when('/', {
             controller: 'BlogListCtrl',
             resolve: {
@@ -12,7 +12,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateP
                     return function(params){return MultiPostLoader(params);}
                 }]
             },
-            templateUrl:'/views/blog/index.html'
+            templateUrl:'/views/blog/index'
         }).when('/:alias', {
             controller: 'BlogShowCtrl',
             resolve: {
@@ -20,7 +20,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateP
                     return function(params){return PostLoader(params);}
                 }]
             },
-            templateUrl:'/views/blog/show.html'
+            templateUrl:'/views/blog/show'
         }).otherwise({redirectTo:'/'});
 
         $translateProvider.translations('en_US', LOCALE_LANGUAGES.en_US);

@@ -1,6 +1,6 @@
 'use strict';
 
-var configs = angular.module('mean.configs', []);
+var configs = angular.module('icyse-blog.configs', []);
 
 configs.constant('DOM_EVENTS', {
     onclick: 'onclick',
