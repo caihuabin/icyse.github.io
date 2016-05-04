@@ -13,3 +13,26 @@ filters.filter('i18n', ['localizedTexts', '$rootScope', function (localizedTexts
     };
 }]);
 
+filters.filter('groupFilter', ['$rootScope', function ($rootScope) {    
+    return function (data, group) {
+        return data.reduce(function(prev, cur, index, array){
+        	var i;
+        	if(prev.some(function(item, index2, array2){
+        		if(item.group === cur['group']){
+        			i = index2;
+        			return true;
+        		}
+        		else{
+        			return false;
+        		}
+        		
+        	})){
+        		prev[i]['posts'].push(cur);
+        	}
+        	else{
+        		prev.push({group: cur['group'], posts:[cur]});
+        	}
+        	return value;
+        }, [{}]);
+    };
+}]);

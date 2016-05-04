@@ -68,8 +68,9 @@ app.controller('ApplicationController', ['$scope', '$rootScope', '$translate', '
     };
 }]);
 
-app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($scope, posts, CUSTOM_EVENTS) {
-    var response;
+app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', function($scope, posts, CUSTOM_EVENTS, $filter) {
+    var responseData;
+    var regularData;
     function fetch(){
         var params;
         if($scope.currentLanguage === 'en_US'){
@@ -79,8 +80,9 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($sc
             params = {url:'/data/zh_CN/posts.json'};
         }
         posts(params).then(function(result){
-            $scope.postsList = result.data.slice(0, 2);
-            response = result;
+            responseData = result.data;
+            $scope.groupFilter('createdTime');
+            $scope.postsList = regularData.slice(0, 2);
         });
     }
     
@@ -89,7 +91,7 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($sc
         NProgress.start();
         setTimeout(function(){
             var len = $scope.postsList.length;
-            $scope.postsList = $scope.postsList.concat(response.data.slice(len, len+2));
+            $scope.postsList = $scope.postsList.concat(regularData.slice(len, len+2));
             $scope.$apply();
             $scope.$emit(CUSTOM_EVENTS.loaded);
             NProgress.done();
@@ -99,6 +101,12 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', function($sc
         fetch();
     });
     fetch();
+    $scope.categoryFilter = function(category){
+        regularData = $filter('filter')(responseData, {alias: 'introducing-icyse-blog'});
+    };
+    $scope.groupFilter = function(group){
+        regularData = $filter('groupFilter')(responseData, group);
+    };
 
 }]);
 app.controller('BlogShowCtrl', ['$scope', '$location', 'post', 'CUSTOM_EVENTS', function($scope, $location, post, CUSTOM_EVENTS) {
