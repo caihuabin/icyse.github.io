@@ -396,6 +396,9 @@ article.about-content, article.contact-content{
   float: right;
 }
 
+.search-group{
+    vertical-align:middle;
+}
 .search-group input.search-input{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -406,7 +409,7 @@ article.about-content, article.contact-content{
 .search-group input.search-input:focus{
     width:calc(100% - 50px);
 }
-.search-group .search-button{
+.search-group button.search-button{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -430,24 +433,24 @@ article.about-content, article.contact-content{
 }
 @-webkit-keyframes pop-up-enter {
 	0% {-webkit-transform: scale(0.4);opacity: 0;}
-	70% { -webkit-transform: scale(1.1); opacity: .8;-webkit-animation-timing-function: ease-out; }
+	70% { -webkit-transform: scale(0.7); opacity: .8;-webkit-animation-timing-function: ease-out; }
 	100% { -webkit-transform: scale(1); opacity: 1; }
 }
 
 @keyframes pop-up-enter {
 	0% {-webkit-transform: scale(0.4);transform: scale(0.4);opacity: 0;}
-	70% { -webkit-transform: scale(1.1); transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+	70% { -webkit-transform: scale(0.7); transform: scale(0.7); opacity: .8; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
 	100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
 }
 @-webkit-keyframes pop-up-leave {
 	0% {-webkit-transform: scale(1); opacity: 1;}
-	70% { -webkit-transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; }
+	70% { -webkit-transform: scale(0.7); opacity: .8; -webkit-animation-timing-function: ease-out; }
 	100% {-webkit-transform: scale(0.4);transform: scale(0.4);opacity: 0;}
 }
 
 @keyframes pop-up-leave {
 	0% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
-	70% { -webkit-transform: scale(1.1); transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+	70% { -webkit-transform: scale(0.7); transform: scale(0.7); opacity: .8; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
 	100% {-webkit-transform: scale(0.4);transform: scale(0.4);opacity: 0;}
 }
 
@@ -712,9 +715,17 @@ article.about-content, article.contact-content{
 }
 
 
-
 @media screen and (min-width: 48em) {
     .search-group input.search-input:focus{
         width:360px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .search-group input.search-input {
+        margin-bottom: 0; 
+        display: inline-block;
+    }
+    .search-group button.search-button {
+        margin: 0;
     }
 }

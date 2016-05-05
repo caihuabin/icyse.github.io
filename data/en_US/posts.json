@@ -52,44 +52,6 @@
 	    "voteCount": 0,
 	    "createdTime": "2016-01-01 10:00",
 	    "updatedTime": "2016-01-01 10:00"
-	},
-	{
-		"title": "YUI 3.10.2 Released",
-	    "alias": "YUI-3.10.2-Released",
-	    "summary": "We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.",
-	    "content": "We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.",
-	    "source": "",
-	    "url": "",
-	    "user": {
-            "username": "Icyse"
-        },
-	    "imgList": [],
-	    "categoryList": ["yui"],
-	    "commentList": [],
-	    "viewCount": 0,
-	    "commentCount": 0,
-	    "voteCount": 0,
-	    "createdTime": "2016-01-01 10:00",
-	    "updatedTime": "2016-01-01 10:00"
-	},
-	{
-		"title": "YUI 3.10.2 Released",
-	    "alias": "YUI-3.10.2-Released",
-	    "summary": "We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.",
-	    "content": "We are happy to announce the release of YUI 3.10.2! You can find it now on the Yahoo! CDN, download it directly, or pull it in via npm. We’ve also updated the YUI Library website with the latest documentation.",
-	    "source": "",
-	    "url": "",
-	    "user": {
-            "username": "Icyse"
-        },
-	    "imgList": [],
-	    "categoryList": ["Uncategorized"],
-	    "commentList": [],
-	    "viewCount": 0,
-	    "commentCount": 0,
-	    "voteCount": 0,
-	    "createdTime": "2016-01-01 10:00",
-	    "updatedTime": "2016-01-01 10:00"
 	}
 
 ]

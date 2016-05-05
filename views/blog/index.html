@@ -1,9 +1,11 @@
 <div class="container">
-<form class="pure-form search-group pure-g" ng-submit="search()" novalidate>
-    <input id="q" name="q" type="search" class="pure-input-rounded search-input" autocomplete="off" tabindex="-1" maxlength="50" ng-model="searchText"><button type="submit" class="secondary-button pure-button search-button"><span class="icon-search"></span></button>
-</form>
+    <div class="posts-controls">
+        <form class="pure-form search-group" ng-submit="search()" novalidate>
+            <input id="q" name="q" type="search" class="pure-input-rounded search-input" autocomplete="off" tabindex="-1" maxlength="50" ng-model="searchText"><button type="submit" class="secondary-button pure-button search-button"><span class="icon-search"></span></button>
+        </form>
+    </div>
     <div class="posts animate-pop-up" ng-repeat='post in postList'>
-        <h1 class="content-subhead">{{post.createdTime}}</h1>
+        <h1 class="content-subhead"><span class="icon-calendar"></span> {{post.createdTime}}</h1>
         <section class="post animate-pop-up">
             <header class="post-header">
                 <img class="post-avatar" alt="Icyse&#x27;s avatar" height="48" width="48" ng-src="/public/images/avatar.ico">

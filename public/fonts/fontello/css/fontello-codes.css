@@ -46,3 +46,15 @@
 .icon-comment-1:before { content: '\e82c'; } /* '' */
 .icon-reply-all:before { content: '\e82d'; } /* '' */
 .icon-forward:before { content: '\e82e'; } /* '' */
+.icon-weibo:before { content: '\e82f'; } /* '' */
+.icon-wechat:before { content: '\e830'; } /* '' */
+.icon-twitter:before { content: '\e831'; } /* '' */
+.icon-facebook:before { content: '\e832'; } /* '' */
+.icon-gplus-squared:before { content: '\e833'; } /* '' */
+.icon-github-squared:before { content: '\e834'; } /* '' */
+.icon-github-circled:before { content: '\e835'; } /* '' */
+.icon-leaf:before { content: '\e836'; } /* '' */
+.icon-calendar:before { content: '\e837'; } /* '' */
+.icon-calendar-1:before { content: '\e838'; } /* '' */
+.icon-home:before { content: '\e839'; } /* '' */
+.icon-git:before { content: '\e83a'; } /* '' */

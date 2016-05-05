@@ -1,4 +1,9 @@
 div.container
+    div.posts-controls
+        form.pure-form.search-group.pure-g(ng-submit='search()', novalidate)
+            input#q.pure-input-rounded.search-input(name='q', type='search', autocomplete='off', tabindex='-1', maxlength='50', ng-model='searchText')
+            button.secondary-button.pure-button.search-button
+                span.icon-search
     div.posts.animate-pop-up(ng-repeat='post in postList')
         h1.content-subhead {{post.createdTime}}
         section.post

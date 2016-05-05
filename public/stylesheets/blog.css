@@ -164,23 +164,23 @@ img.lazy-load.show{
     .post-category-pure, .post-category-icyse {
         background: #4d85d1;
     }
-    .post-category-yui {
+    .post-category-Algorithm, .post-category-MongoDB {
         background: #8156a7;
     }
-    .post-category-JavaScript {
+    .post-category-JavaScript, .post-category-GameJS {
         background: #df2d4f;
     }
-    .post-category-CSS {
-        background: #e8e8e8;
-    }
-    .post-category-NodeJs {
+    .post-category-NodeJs, .post-category-Linux {
         background: #df6659;
     }
-    .post-category-AngularJs {
+    .post-category-AngularJs, .post-category-React {
         background: #2fa8ec;
     }
     .post-category-HTML {
         background: #d0d6d6;
+    }
+    .post-category-CSS {
+        background: #ffc94c;
     }
     .post-category-Canvas {
         background: #64448f;
@@ -191,6 +191,7 @@ img.lazy-load.show{
     .post-category-Interview {
         background: #3755ad;
     }
+
 .post-images {
     margin: 1em 0;
 }
@@ -217,7 +218,7 @@ img.lazy-load.show{
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;
-        margin-left: 20%;
+        margin-left: 250px;
     }
 
     .header {
@@ -229,5 +230,6 @@ img.lazy-load.show{
         position: fixed;
         top: 0;
         bottom: 0;
+        width:250px;
     }
 }
