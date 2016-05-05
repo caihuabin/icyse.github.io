@@ -1,13 +1,15 @@
 <div class="container">
-    <div class="posts animate-pop-up" ng-repeat='posts in postsList'>
-        <h1 class="content-subhead">{{posts.group}}</h1>
-        <section class="post animate-pop-up" ng-repeat='post in posts.posts'>
+<form class="pure-form search-group pure-g" ng-submit="search()" novalidate>
+    <input id="q" name="q" type="search" class="pure-input-rounded search-input" autocomplete="off" tabindex="-1" maxlength="50" ng-model="searchText"><button type="submit" class="secondary-button pure-button search-button"><span class="icon-search"></span></button>
+</form>
+    <div class="posts animate-pop-up" ng-repeat='post in postList'>
+        <h1 class="content-subhead">{{post.createdTime}}</h1>
+        <section class="post animate-pop-up">
             <header class="post-header">
                 <img class="post-avatar" alt="Icyse&#x27;s avatar" height="48" width="48" ng-src="/public/images/avatar.ico">
                 <h2 class="post-title"><a ng-href="/#/{{post.alias}}">{{post.title}}</a></h2>
                 <p class="post-meta">
-                    By <a ng-href="/#/" class="post-author">Icyse</a> under <a class="post-category post-category-{{category}} animate-pop-up" href="#" ng-repeat="category in post.categoryList">{{category}}</a> at 
-                    <span>{{post.createdTime}}</span>
+                    By <a ng-href="/#/" class="post-author">Icyse</a> under <a class="post-category post-category-{{category}} animate-pop-up" ng-href="/#/?category={{category}}" ng-repeat="category in post.categoryList">{{category}}</a>
                 </p>
             </header>
             <div class="post-description">

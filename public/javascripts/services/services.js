@@ -25,6 +25,19 @@ services.factory('PostLoader', ['$http', '$route', '$q', function($http, $route,
     };
 }]);
 
+services.factory('Utility', ['$http', function ($http) {
+    var tools = {};
+    tools.deObject = function (obj) {
+        for(var key in obj){
+            if(obj[key] === undefined || obj[key] === null || obj[key] === ''){
+                delete obj[key];
+            }
+        }
+        return obj;
+    };
+    return {tools: tools};
+}]);
+
 services.factory('Comment', ['$resource', function($resource) {
     return $resource('/comments/:id', {id: '@_id'}, { update: { method: 'PUT' } });
 }]);

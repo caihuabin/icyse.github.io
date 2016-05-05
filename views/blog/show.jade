@@ -6,7 +6,7 @@ div.container
                 p.blog-content-subtitle By 
                     a.blog-author(href='') {{post.user.username}}
                     |  under 
-                    a(class='post-category post-category-{{category}} animate-pop-up', href='#', ng-repeat='category in post.categoryList') {{category}}
+                    a(class='post-category post-category-{{category}} animate-pop-up', ng-href='/#/?category={{category}}', ng-repeat='category in post.categoryList') {{category}}
                     |  at 
                     span {{post.createdTime}}
                 p.blog-content-source(ng-if='!!post.source') From 

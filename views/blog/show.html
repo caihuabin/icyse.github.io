@@ -4,7 +4,7 @@
             <div class="pure-u-2-3">
                 <h2 class="blog-content-title">{{post.title}}</h2>
                 <p class="blog-content-subtitle">By 
-                    <a href="" class="blog-author">{{post.user.username}}</a> under <a class="post-category post-category-{{category}} animate-pop-up" href="#" ng-repeat="category in post.categoryList">{{category}}</a> at 
+                    <a href="" class="blog-author">{{post.user.username}}</a> under <a class="post-category post-category-{{category}} animate-pop-up" ng-href="/#/?category={{category}}" ng-repeat="category in post.categoryList">{{category}}</a> at 
                     <span>{{post.createdTime}}</span> 
                 </p>
                 <p class="blog-content-source" ng-if="!!post.source">
@@ -13,9 +13,9 @@
                 </p>
             </div>
             <div class="blog-content-controls pure-u-1-3">
-                <button class="secondary-button pure-button" scroll-into="commentText", ng-click="scrollInto()">Reply {{post.commentCount}}</button>
-                <button class="secondary-button pure-button">View {{post.viewCount}}</button>
-                <button class="secondary-button pure-button" ng-click="vote()">Vote {{post.voteCount}}</button>
+                <button class="secondary-button pure-button button-small" scroll-into="commentText", ng-click="scrollInto()">Reply {{post.commentCount}}</button>
+                <button class="secondary-button pure-button button-small">View {{post.viewCount}}</button>
+                <button class="secondary-button pure-button button-small" ng-click="vote()">Vote {{post.voteCount}}</button>
             </div>
         </header>
         <section class="blog-content-body">

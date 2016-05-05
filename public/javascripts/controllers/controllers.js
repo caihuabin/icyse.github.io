@@ -68,30 +68,62 @@ app.controller('ApplicationController', ['$scope', '$rootScope', '$translate', '
     };
 }]);
 
-app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', function($scope, posts, CUSTOM_EVENTS, $filter) {
+app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '$location', 'Utility', function($scope, posts, CUSTOM_EVENTS, $filter, $location, Utility) {
     var responseData;
     var regularData;
+
+    var urlParams;
+    var search = $location.search();
+    var searchParams = Utility.tools.deObject({
+        skip: search.skip,
+        limit: search.limit,
+        category: search.category,
+        searchText: search.searchText,
+        orderBy: search.orderBy
+    });
+    var categoryFilter = function(item){
+        return item.categoryList.indexOf(searchParams.category) > -1
+    };
+    var filters = function(data){
+        var tempData = data;
+        if(searchParams.hasOwnProperty('category')){
+            tempData = $filter('filter')(tempData, categoryFilter);
+        }
+        if(searchParams.hasOwnProperty('searchText')){
+            //tempData = $filter('filter')(tempData, {$: searchParams.searchText});
+            tempData = $filter('filter')(tempData, {'title': searchParams.searchText});
+        }
+
+        if(searchParams.hasOwnProperty('orderBy')){
+            tempData = $filter('orderBy')(tempData, [searchParams.orderBy, 'createdTime']);
+        }
+        return tempData;
+    }
+
     function fetch(){
-        var params;
         if($scope.currentLanguage === 'en_US'){
-            params = {url:'/data/en_US/posts.json'};
+            urlParams = {url:'/data/en_US/posts.json'};
         }
         else{
-            params = {url:'/data/zh_CN/posts.json'};
+            urlParams = {url:'/data/zh_CN/posts.json'};
         }
-        posts(params).then(function(result){
+        posts(urlParams).then(function(result){
             responseData = result.data;
-            $scope.groupFilter('createdTime');
-            $scope.postsList = regularData.slice(0, 2);
+            regularData = filters(responseData);
+            $scope.postList = regularData.slice(0, 3);
         });
     }
     
+    $scope.searchText;
+    $scope.search = function(){
+        $location.search({searchText: $scope.searchText});
+    };
     $scope.$on(CUSTOM_EVENTS.loadMore, function(data){
         $scope.$emit(CUSTOM_EVENTS.loading);
         NProgress.start();
         setTimeout(function(){
-            var len = $scope.postsList.length;
-            $scope.postsList = $scope.postsList.concat(regularData.slice(len, len+2));
+            var len = $scope.postList.length;
+            $scope.postList = $scope.postList.concat(regularData.slice(len, len+3));
             $scope.$apply();
             $scope.$emit(CUSTOM_EVENTS.loaded);
             NProgress.done();
@@ -101,12 +133,6 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', f
         fetch();
     });
     fetch();
-    $scope.categoryFilter = function(category){
-        regularData = $filter('filter')(responseData, {alias: 'introducing-icyse-blog'});
-    };
-    $scope.groupFilter = function(group){
-        regularData = $filter('groupFilter')(responseData, group);
-    };
 
 }]);
 app.controller('BlogShowCtrl', ['$scope', '$location', 'post', 'CUSTOM_EVENTS', function($scope, $location, post, CUSTOM_EVENTS) {
