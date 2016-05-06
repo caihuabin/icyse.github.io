@@ -7,9 +7,13 @@ directives.directive('markDown', ['$sce', function($sce){
         restrict: 'A',
         require: 'ngModel',
         link: function(scope, elem, attrs, ctrl){
+            var renderer = new marked.Renderer();
+            renderer.heading = function (text, level) {
+                return '<h' + level + '>' + text + '</h' + level + '>';
+            },
             scope.$watch(attrs.ngModel, function() {
                 if(scope.post && scope.post.content){
-                    scope.previewContent = $sce.trustAsHtml(markdown.toHTML(scope.post.content));
+                    scope.previewContent = $sce.trustAsHtml(marked(scope.post.content, {sanitize: true, renderer: renderer}));
                 }
             });
         }
