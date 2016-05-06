@@ -102,6 +102,25 @@ directives.directive('lazyLoad', ['$window', function ($window) {
         }
     }
 }]);
+directives.directive('menuPopup', ['$window', 'CATEGORY_LIST', function ($window, CATEGORY_LIST) {
+    return {
+        restrict: 'A',
+        scope: {},
+        template:   '<ul class="pure-menu pure-menu-horizontal">\
+                        <li class="pure-menu-item"><a ng-href="/#/" class="pure-menu-link tooltipped tooltipped-s" aria-label="Home"><span class="icon-home"></span></a></li>\
+                        <li class="pure-menu-item"><a href="javascript:;" ng-click="toggle=!toggle" class="pure-menu-link tooltipped tooltipped-s" aria-label="Menu"><span class="icon-leaf"></span></a></li>\
+                        <li class="pure-menu-item"><a ng-href="/#/about" class="pure-menu-link tooltipped tooltipped-s" aria-label="About" href="/#/about"><span class="icon-user"></span></a></li>\
+                        <li class="pure-menu-item"><a href="http://github.com/icyse/" class="pure-menu-link tooltipped tooltipped-s" aria-label="GitHub"><span class="icon-github-circled"></span></a></li>\
+                    </ul>\
+                    <ul ng-show="toggle" class="flip-in category-popup">\
+                        <li ng-repeat="category in categoryList"><a class="post-category post-category-{{category}}" ng-href="/#/?category={{category}}">{{category}}</a></li>\
+                    </ul>',
+        link: function (scope) {
+            scope.categoryList = CATEGORY_LIST;
+            scope.toggle = false;
+        }
+    };
+}]);
 directives.directive('focus', function() {
     return {
         link: function(scope, element, attrs) {

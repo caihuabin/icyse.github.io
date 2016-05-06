@@ -28,6 +28,12 @@ h3 {
     left:0;
     border:0;
     z-index:1;
+    width:25%;
+    max-width: 149px;
+}
+#fork-me img{
+    border:0;
+    width:100%;
 }
 
 #layout {
@@ -42,8 +48,8 @@ h3 {
 .logo{
     border: 5px solid #fff;
     border-radius: 50%;
-    width: 138px;
-    height: 138px;
+    width: 106px;
+    height: 106px;
     margin: 0 auto;
     background: rgb(176, 202, 219);
     display: block;
@@ -55,6 +61,7 @@ img.lazy-load{
     border-radius: 50%;
     opacity: 0;
     -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 img.lazy-load.show{
     width: 100%;
@@ -127,7 +134,7 @@ img.lazy-load.show{
     padding-bottom: 2em;
 }
 .post-title {
-    font-size: 2em;
+    font-size: 1.5em;
     
     margin-bottom: 0.2em;
 }
@@ -158,10 +165,10 @@ img.lazy-load.show{
     font-size: 80%;
 }
 
-    .post-category-design, .post-category-wiki {
+    .post-category-Design, .post-category-Wiki {
         background: #5aba59;
     }
-    .post-category-pure, .post-category-icyse {
+    .post-category-Icyse {
         background: #4d85d1;
     }
     .post-category-Algorithm, .post-category-MongoDB {
@@ -177,7 +184,7 @@ img.lazy-load.show{
         background: #2fa8ec;
     }
     .post-category-HTML {
-        background: #d0d6d6;
+        background: #cccc00;
     }
     .post-category-CSS {
         background: #ffc94c;
@@ -206,6 +213,9 @@ img.lazy-load.show{
     text-align: center;
     padding: 1em 0;
 }
+.footer ul{
+    padding: 0;
+}
 .footer a {
     /* color: #ccc;
     font-size: 80%; */
@@ -214,7 +224,25 @@ img.lazy-load.show{
 .footer .pure-menu a:focus {
     background: none;
 }
+.sidebar .footer{
+    padding:0;
+    font-size: 1.2em;
+    margin:0;
+}
+.sidebar .footer .pure-menu-link{
+    padding: 0 .5em;
+}
+ul.category-popup li{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+    position: relative;
+}
 
+    
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;
@@ -231,5 +259,9 @@ img.lazy-load.show{
         top: 0;
         bottom: 0;
         width:250px;
+    }
+    .logo{
+        width:138px;
+        height:138px;
     }
 }
