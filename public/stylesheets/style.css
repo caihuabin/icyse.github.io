@@ -518,6 +518,26 @@ a:active, a:hover {
         
     }
 }
+@-webkit-keyframes tooltip-fade{
+    from{
+        opacity:1;
+        
+    }
+    to{
+        opacity:0;
+        
+    }
+}
+@keyframes tooltip-fade{
+    from{
+        opacity:1;
+        
+    }
+    to{
+        opacity:0;
+        
+    }
+}
 
 
 /* .animatePopUp {

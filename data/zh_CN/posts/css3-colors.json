@@ -1,0 +1,19 @@
+{
+	"title": "CSS3下的颜色名称及对应颜色值",
+    "alias": "css3-colors",
+    "summary": "颜色名称也称为颜色关键字，像我们熟悉的black表示黑色，white表示白色，blue表示蓝色等。实际上，在CSS的颜色定义中，总共有147种颜色关键字，所有者147种颜色名字均取自X Windows 系统，X 颜色名，所以即使这147个颜色名看上去不是很标准，支持也是非常不错的。",
+    "content": "|| *Year* || *Temperature (low)* || *Temperature (high)* ||\n\n|| 1900 || -10 || 25 ||\n\n|| 1910 || -15 || 30 ||\n|| 1920 || -10 || 32 ||",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["CSS"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2015-08-01 10:00",
+    "updatedTime": "2015-08-01 10:00"
+}

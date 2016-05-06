@@ -165,26 +165,41 @@ img.lazy-load.show{
     font-size: 80%;
 }
 
-    .post-category-Design, .post-category-Wiki {
+    .post-category-Design{
+        background: #990066;
+    } 
+    .post-category-Wiki {
         background: #5aba59;
     }
     .post-category-Icyse {
         background: #4d85d1;
     }
-    .post-category-Algorithm, .post-category-MongoDB {
+    .post-category-Algorithm{
+        background: #FF0033;
+    } 
+    .post-category-MongoDB {
         background: #8156a7;
     }
-    .post-category-JavaScript, .post-category-GameJS {
+    .post-category-JavaScript{
+        background: maroon;
+    } 
+    .post-category-GameJS {
         background: #df2d4f;
     }
-    .post-category-NodeJs, .post-category-Linux {
+    .post-category-NodeJs{
+        background: #33CC33;
+    }
+    .post-category-Linux {
         background: #df6659;
     }
-    .post-category-AngularJs, .post-category-React {
-        background: #2fa8ec;
+    .post-category-AngularJs{
+        background: peru;
+    } 
+    .post-category-React {
+        background: #339999;
     }
     .post-category-HTML {
-        background: #cccc00;
+        background: #FF9900;
     }
     .post-category-CSS {
         background: #ffc94c;
