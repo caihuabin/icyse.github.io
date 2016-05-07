@@ -28,7 +28,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', '$translateP
         $translateProvider.preferredLanguage('zh_CN');
         $translateProvider.useSanitizeValueStrategy('escapeParameters');
         
-        /*$locationProvider.html5Mode(true);*/
+        /*$locationProvider.html5Mode(false).hashPrefix('!');*/
 }]);
 
 app.run(['$rootScope', '$location', function($rootScope, $location) {
@@ -68,7 +68,7 @@ app.controller('ApplicationController', ['$scope', '$rootScope', '$translate', '
     };
 }]);
 
-app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '$location', 'Utility', function($scope, posts, CUSTOM_EVENTS, $filter, $location, Utility) {
+app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '$location', 'Utility', '$route', function($scope, posts, CUSTOM_EVENTS, $filter, $location, Utility, $route) {
     var responseData;
     var regularData;
 
@@ -114,7 +114,7 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '
         });
     }
     
-    $scope.searchText;
+    $scope.searchText = searchParams.searchText || '';
     $scope.search = function(){
         $location.search({searchText: $scope.searchText});
     };
@@ -130,6 +130,8 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '
         }, 800);
     });
     $scope.$on(CUSTOM_EVENTS.changeLanguage, function(args, lang){
+        /*$location.search('searchText', null);
+        $route.reload();*/
         fetch();
     });
     fetch();
