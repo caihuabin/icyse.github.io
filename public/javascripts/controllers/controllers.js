@@ -116,7 +116,7 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '
     
     $scope.searchText = searchParams.searchText || '';
     $scope.search = function(){
-        $location.search({searchText: $scope.searchText});
+        $location.path('/').search({searchText: $scope.searchText});
     };
     $scope.$on(CUSTOM_EVENTS.loadMore, function(data){
         $scope.$emit(CUSTOM_EVENTS.loading);

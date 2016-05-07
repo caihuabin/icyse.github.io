@@ -26,7 +26,7 @@ configs.constant('CATEGORY_LIST', [
     "Canvas",
     "CSS",
     "Design",
-    "GameJS",
+    "GameJs",
     "Git",
     "HTML",
     "Icyse",
