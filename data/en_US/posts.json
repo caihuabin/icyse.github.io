@@ -30,19 +30,14 @@
         },
 	    "imgList": [
 	    	{
-	    		"title": "",
-	    		"alt": "",
-	    		"src": "/public/uploads/images/wade1.jpg"
+	    		"title": "Workflow",
+	    		"alt": "workflow",
+	    		"src": "/public/uploads/images/git-1.png"
 	    	},
 	    	{
-	    		"title": "",
-	    		"alt": "",
-	    		"src": "/public/uploads/images/wade2.jpg"
-	    	},
-	    	{
-	    		"title": "",
-	    		"alt": "",
-	    		"src": "/public/uploads/images/wade3.jpg"
+	    		"title": "Branch",
+	    		"alt": "branch",
+	    		"src": "/public/uploads/images/git-2.png"
 	    	}
 	    ],
 	    "categoryList": ["Git"],

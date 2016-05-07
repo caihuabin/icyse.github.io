@@ -30,13 +30,13 @@
         },
 	    "imgList": [
 	    	{
-	    		"title": "",
-	    		"alt": "",
+	    		"title": "Workflow",
+	    		"alt": "workflow",
 	    		"src": "/public/uploads/images/git-1.png"
 	    	},
 	    	{
-	    		"title": "",
-	    		"alt": "",
+	    		"title": "Branch",
+	    		"alt": "branch",
 	    		"src": "/public/uploads/images/git-2.png"
 	    	}
 	    ],
