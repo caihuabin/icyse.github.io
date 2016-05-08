@@ -14,5 +14,7 @@ There are 2 ways to run the project.
 2. The project supports nodejs server. If you prefer nodejs, you can enter the project directory and run "npm start".Just like this:
 
 
+
     cd /path/to/project
     npm start
+    
