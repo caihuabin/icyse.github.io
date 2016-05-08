@@ -1,23 +1,37 @@
 var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 var app = express();
 
 // middleware
 // uncomment after placing your favicon in /public
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
-app.set('views', __dirname);
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(session({
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
+    secret: 'shhhh, very secret'
+}));
 
 app.get('/', function(req, res, next){
     res.render('index');
 });
 app.get('/views/about/index', function(req, res, next){
-    res.render('views/about/index');
+    res.render('about/index');
 });
 app.get('/views/blog/index', function(req, res, next){
-    res.render('views/blog/index');
+    res.render('blog/index');
 });
 app.get('/views/blog/show', function(req, res, next){
-    res.render('views/blog/show');
+    res.render('blog/show');
 });
 
 // catch 404 and forward to error handler
