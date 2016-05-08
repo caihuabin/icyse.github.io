@@ -4,7 +4,7 @@ Icyse-Blog is a Personal Blog written in AngularJs.
 If you have a problem or have some good advice? Welcome to star and submit PR or submit a issue.❤
 ## Online DEMO
 
-###[Click here](http://icyse.github.io)
+###[http://icyse.github.io](http://icyse.github.io)
 
 ## Zero-configuration
 There are 2 ways to run the project.
