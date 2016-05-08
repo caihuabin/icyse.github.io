@@ -15,4 +15,5 @@ There are 2 ways to run the project.
 
 
 	cd /path/to/project
+	
 	npm start
