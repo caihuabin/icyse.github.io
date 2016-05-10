@@ -68,7 +68,7 @@ app.controller('ApplicationController', ['$scope', '$rootScope', '$translate', '
     };
 }]);
 
-app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '$location', 'Utility', '$route', function($scope, posts, CUSTOM_EVENTS, $filter, $location, Utility, $route) {
+app.controller('BlogListCtrl', ['$scope', 'posts', 'DOM_EVENTS', 'CUSTOM_EVENTS', '$filter', '$location', 'Utility', '$route', '$window', function($scope, posts, DOM_EVENTS, CUSTOM_EVENTS, $filter, $location, Utility, $route, $window) {
     var responseData;
     var regularData;
 
@@ -135,7 +135,7 @@ app.controller('BlogListCtrl', ['$scope', 'posts', 'CUSTOM_EVENTS', '$filter', '
         fetch();
     });
     fetch();
-
+    
 }]);
 app.controller('BlogShowCtrl', ['$scope', '$location', 'post', 'CUSTOM_EVENTS', function($scope, $location, post, CUSTOM_EVENTS) {
     function fetch(){
