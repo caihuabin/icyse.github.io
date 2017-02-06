@@ -39,13 +39,14 @@ configs.constant('CATEGORY_LIST', [
     "Uncategorized",
     "Wiki"
 ]);
+configs.constant('BROWSER_LANGUAGE', (navigator.language || navigator.browserLanguage).toUpperCase());
 configs.constant('LOCALE_LANGUAGES', {
-    "zh_CN" : {
+    "zh_CN": {
         "ENGLISH": "英文",
         "CHINESE": "中文"
     },
-    "en_US" : {
+    "en_US": {
         "ENGLISH": "ENGLISH",
         "CHINESE": "CHINESE"
-   }
+    }
 });

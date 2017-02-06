@@ -1,10 +1,10 @@
 {
-    "zh_CN" : {
+    "zh_CN": {
         "ENGLISH": "英文",
         "CHINESE": "中文"
     },
-    "en_US" : {
+    "en_US": {
         "ENGLISH": "ENGLISH",
         "CHINESE": "CHINESE"
-   }
+    }
 }

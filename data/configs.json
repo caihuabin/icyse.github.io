@@ -1,21 +1,21 @@
 {
-	"categoryList":[
-		"Algorithm",
-		"AngularJs",
-		"Canvas",
-		"CSS",
-		"Design",
-		"GameJs",
-		"Git",
-		"HTML",
-		"Icyse",
-		"Interview",
-		"JavaScript",
-		"Linux",
-		"MongoDB",
-		"NodeJs",
-		"React",
-		"Uncategorized",
-		"Wiki"
-	]
+    "categoryList": [
+        "Algorithm",
+        "AngularJs",
+        "Canvas",
+        "CSS",
+        "Design",
+        "GameJs",
+        "Git",
+        "HTML",
+        "Icyse",
+        "Interview",
+        "JavaScript",
+        "Linux",
+        "MongoDB",
+        "NodeJs",
+        "React",
+        "Uncategorized",
+        "Wiki"
+    ]
 }

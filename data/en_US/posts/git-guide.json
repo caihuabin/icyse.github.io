@@ -8,33 +8,27 @@
     "user": {
         "username": "Icyse"
     },
-    "imgList": [
-        {
-            "title": "",
-            "alt": "",
-            "src": "/public/uploads/images/wade1.jpg"
-        },
-        {
-            "title": "",
-            "alt": "",
-            "src": "/public/uploads/images/wade2.jpg"
-        },
-        {
-            "title": "",
-            "alt": "",
-            "src": "/public/uploads/images/wade3.jpg"
-        }
-    ],
+    "imgList": [{
+        "title": "",
+        "alt": "",
+        "src": "/public/uploads/images/wade1.jpg"
+    }, {
+        "title": "",
+        "alt": "",
+        "src": "/public/uploads/images/wade2.jpg"
+    }, {
+        "title": "",
+        "alt": "",
+        "src": "/public/uploads/images/wade3.jpg"
+    }],
     "categoryList": ["Git"],
-    "commentList": [
-        {
-            "content": "This is a comment",
-            "user": {"avatar": "/public/images/avatar.ico", "username": "Icyse"},
-            "voteCount": 0,
-            "createdTime": "2016-01-02 10:00",
-            "updatedTime": "2016-01-02 10:00"
-        }
-    ],
+    "commentList": [{
+        "content": "This is a comment",
+        "user": { "avatar": "/public/images/avatar.ico", "username": "Icyse" },
+        "voteCount": 0,
+        "createdTime": "2016-01-02 10:00",
+        "updatedTime": "2016-01-02 10:00"
+    }],
     "viewCount": 0,
     "commentCount": 1,
     "voteCount": 0,

@@ -1,31 +1,28 @@
 {
-	"title": "Introducing Icyse Blog",
+    "title": "Introducing Icyse Blog",
     "alias": "introducing-icyse-blog",
     "summary": "ICYSE-BLOG is a blog project written in AngularJs.",
     "content": "You can click this [https://github.com/icyse/icyse.github.io](https://github.com/icyse/icyse.github.io) to find all the lastest source code. What I hope is that you can support my work. Such as starring the project, pulling requests and so on.",
     "source": "",
     "url": "",
     "user": {
-            "username": "Icyse"
-        },
+        "username": "Icyse"
+    },
     "imgList": [],
     "categoryList": ["Icyse", "Wiki"],
-    "commentList": [
-        {
-            "content": "This is the first comment.",
-            "user": {"avatar": "/public/images/avatar.ico", "username": "Icyse"},
-            "voteCount": 0,
-            "createdTime": "2016-01-02 10:00",
-            "updatedTime": "2016-01-02 10:00"
-        },
-        {
-            "content": "This is the second comment.",
-            "user": {"avatar": "/public/images/avatar.png", "username": "Unknown"},
-            "voteCount": 0,
-            "createdTime": "2016-01-02 10:00",
-            "updatedTime": "2016-01-02 10:00"
-        }
-    ],
+    "commentList": [{
+        "content": "This is the first comment.",
+        "user": { "avatar": "/public/images/avatar.ico", "username": "Icyse" },
+        "voteCount": 0,
+        "createdTime": "2016-01-02 10:00",
+        "updatedTime": "2016-01-02 10:00"
+    }, {
+        "content": "This is the second comment.",
+        "user": { "avatar": "/public/images/avatar.png", "username": "Unknown" },
+        "voteCount": 0,
+        "createdTime": "2016-01-02 10:00",
+        "updatedTime": "2016-01-02 10:00"
+    }],
     "viewCount": 0,
     "commentCount": 2,
     "voteCount": 0,

@@ -21,16 +21,16 @@ app.use(session({
     secret: 'shhhh, very secret'
 }));
 
-app.get('/', function(req, res, next){
+app.get('/', function(req, res, next) {
     res.render('index');
 });
-app.get('/views/about/index', function(req, res, next){
+app.get('/views/about/index', function(req, res, next) {
     res.render('about/index');
 });
-app.get('/views/blog/index', function(req, res, next){
+app.get('/views/blog/index', function(req, res, next) {
     res.render('blog/index');
 });
-app.get('/views/blog/show', function(req, res, next){
+app.get('/views/blog/show', function(req, res, next) {
     res.render('blog/show');
 });
 
