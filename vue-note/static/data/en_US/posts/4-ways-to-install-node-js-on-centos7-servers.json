@@ -1,0 +1,19 @@
+{
+    "title": "Four ways to install node.js on centos7",
+    "alias": "4-ways-to-install-node-js-on-centos7-servers",
+    "summary": "Node.js和Javascript有着千丝万缕的联系，可以说Node.js让Javascript显得从未如此强大。今天系统的介绍Node.js这货在CentOS 7上的安装方法，其中涵盖了源码安装，已编译版本安装，EPEL（Extra Packages for Enterprise Linux）安装和通过NVM（Node version manager）安装这四种方法，其中，前两种方法基本上都是Linux通用的安装方式，特别是前者，其优点自然是可以安装最新的版本，至于后两者，因为安装简单且管理方便，非常适合我等新手小盆友使用~，废话不多说",
+    "content": "### 一、源码安装\n#### 1.下载源码（官网查看最新版本链接）\n\n    wget http://nodejs.org/dist/v0.10.30/node-v0.10.30.tar.gz\n\n#### 2.解压源码\n\n    tar xzvf node-v* && cd node-v*\n\n#### 3.安装必要的编译软件\n\n    sudo yum install gcc gcc-c++\n\n#### 4.编译\n\n    ./configure\n    make\n\n#### 5.编译&安装\n\n    sudo make install\n\n#### 6.查看版本（测试安装是否成功）\n\n    node --version\n\n### 二、使用已编译版本安装\n\n#### 1.下载已编译版本\n\n    cd ~\n    wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-x64.tar.gz\n\n#### 2.解压\n\n    sudo tar --strip-components 1 -xzvf node-v* -C /usr/local\n\n#### 3.老样子，测试安装\n\n    node --version\n\n### 三、使用EPEL安装\n\n#### 1.下载EPEL\n\n    sudo rpm -i http://download.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm\n\n#### 2.安装\n\n    sudo yum install nodejs\n\n#### 3.老样子，测试安装\n\n    node --version\n\n#### 4.（可选）安装npm管理包\n\n    sudo yum install npm\n\n### 四、通过NVM安装\nNVM（Node version manager）顾名思义，就是Node.js的版本管理软件，可以轻松的在Node.js各个版本间切换，项目源码[GitHub](https://github.com/creationix/nvm)\n#### 1.下载并安装NVM脚本\n\n    curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash\n    source ~/.bash_profile\n\n#### 2.列出所需要的版本\n\n    nvm list-remote\n返回结果如下\n\n    . . .\n    v0.11.10\n    v0.11.11\n    v0.11.12\n    v0.11.13\n\n#### 3.安装相应的版本\n\n    nvm install v0.11.13\n\n#### 4.查看已安装的版本\n\n    nvm list\n    ->  v0.11.13\n    system\n\n#### 5.切换版本\n\n    nvm use v0.10.30\n\n#### 6.设置默认版本\n\n    nvm alias default v0.11.13",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["NodeJs"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 2,
+    "createdTime": "2016-04-01 10:00",
+    "updatedTime": "2016-04-01 10:00"
+}

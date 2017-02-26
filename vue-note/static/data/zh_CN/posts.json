@@ -1,0 +1,207 @@
+[{
+    "title": "简介 Icyse Note",
+    "alias": "introducing-icyse-note",
+    "summary": "ICYSE-Note 是一个使用Vue.Js写的Web笔记应用",
+    "content": "你可以点击 [https://github.com/icyse/vue-note](https://github.com/icyse/vue-note) 找到所有最新的源码。\n\n如果你觉得该项目对你有所帮助，请为该项目star哦；或者如果你找到该项目的一些bug，可以提交issues哦；再者你有更好的想法，也可以为该项目贡献代码。感谢你的支持！",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["Icyse", "Wiki"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-05-01 10:00",
+    "updatedTime": "2016-05-01 10:00"
+}, {
+    "title": "Git - 简易指南",
+    "alias": "git-guide",
+    "summary": "助你开始使用 git 的简易指南，木有高深内容。。。",
+    "content": "###安装\n\n###创建新仓库\n创建新文件夹，打开，然后执行 \n\n    git init\n以创建新的 git 仓库。\n###检出仓库\n执行如下命令以创建一个本地仓库的克隆版本：\n\n    git clone /path/to/repository \n如果是远端服务器上的仓库，你的命令会是这个样子：\n\n    git clone username@host:/path/to/repository\n###工作流\n你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 缓存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，指向你最近一次提交后的结果。\n\n\n###添加与提交\n你可以计划改动（把它们添加到缓存区），使用如下命令：\n\n    git add <filename>\n    git add *\n这是 git 基本工作流程的第一步；使用如下命令以实际提交改动：\n\n    git commit -m \"代码提交信息\"\n现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库。\n###推送改动\n你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：\n\n    git push origin master\n可以把 master 换成你想要推送的任何分支。 \n\n如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：\n\n    git remote add origin <server>\n如此你就能够将你的改动推送到所添加的服务器上去了。\n###分支\n分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。\n\n\n创建一个叫做“feature_x”的分支，并切换过去：\n\n    git checkout -b feature_x\n切换回主分支：\n\n    git checkout master\n再把新建的分支删掉：\n\n    git branch -d feature_x\n除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：\n\n    git push origin <branch>\n###更新与合并\n要更新你的本地仓库至最新改动，执行：\n\n    git pull\n以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。\n要合并其他分支到你的当前分支（例如 master），执行：\n\n    git merge <branch>\n两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（conflicts）。 这时候就需要你修改这些文件来人肉合并这些 冲突（conflicts） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：\n\n    git add <filename>\n在合并改动之前，也可以使用如下命令查看：\n\n    git diff <source_branch> <target_branch>\n\n###标签\n在软件发布时创建标签，是被推荐的。这是个旧有概念，在 SVN 中也有。可以执行如下命令以创建一个叫做 1.0.0 的标签：\n\n    git tag 1.0.0 1b2e1d63ff\n1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。使用如下命令获取提交 ID：\n\n    git log\n你也可以用该提交 ID 的少一些的前几位，只要它是唯一的。\n\n###替换本地改动\n假如你做错事（自然，这是不可能的），你可以使用如下命令替换掉本地改动：\n\n    git checkout -- <filename>\n此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。\n\n假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：\n\n    git fetch origin\n    git reset --hard origin/master\n\n###有用的贴士\n内建的图形化 git：\n\n    gitk\n彩色的 git 输出：\n\n    git config color.ui true\n显示历史记录时，只显示一行注释信息：\n\n    git config format.pretty oneline\n交互地添加文件至缓存区：\n\n    git add -i",
+    "source": "罗杰·杜德勒",
+    "url": "https://twitter.com/rogerdudler",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [{
+        "title": "Workflow",
+        "alt": "workflow",
+        "src": "/static/uploads/images/git-1.png"
+    }, {
+        "title": "Branch",
+        "alt": "branch",
+        "src": "/static/uploads/images/git-2.png"
+    }],
+    "categoryList": ["Git"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-05-01 10:00",
+    "updatedTime": "2016-05-01 10:00"
+}, {
+    "title": "HTML5的实时多人游戏，Node.js Socket.io Canvas/HTML5",
+    "alias": "real-time-multiplayer-in-HTML5",
+    "summary": "全JS构建实时多人游戏，使用Node.js、Socket.io、Canvas/HTML5",
+    "content": "",
+    "source": "Sven Bergström",
+    "url": "http://buildnewgames.com/real-time-multiplayer/",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["GameJs"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-01-01 10:00",
+    "updatedTime": "2016-01-01 10:00"
+}, {
+    "title": "在CentOS7上安装Node.js的4种方法",
+    "alias": "4-ways-to-install-node-js-on-centos7-servers",
+    "summary": "Node.js和Javascript有着千丝万缕的联系，可以说Node.js让Javascript显得从未如此强大。今天系统的介绍Node.js这货在CentOS 7上的安装方法，其中涵盖了源码安装，已编译版本安装，EPEL（Extra Packages for Enterprise Linux）安装和通过NVM（Node version manager）安装这四种方法，其中，前两种方法基本上都是Linux通用的安装方式，特别是前者，其优点自然是可以安装最新的版本，至于后两者，因为安装简单且管理方便，非常适合我等新手小盆友使用~，废话不多说",
+    "content": "",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["NodeJs"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 2,
+    "createdTime": "2016-04-01 10:00",
+    "updatedTime": "2016-04-01 10:00"
+}, {
+    "title": "解决 nodejs 服务器崩溃的2种解决办法",
+    "alias": "nodejs-server-keep-alive",
+    "summary": "用node启动server后，发现服务器不稳定，经常crash。我是用ssh远程登录的，ssh远程通道中断，或者Ctrl+C,都会使nodejs server崩溃掉。",
+    "content": "",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["NodeJs"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-03-01 10:00",
+    "updatedTime": "2016-03-01 10:00"
+}, {
+    "title": "如何面试前端工程师：Github很重要",
+    "alias": "how-front-end-interview",
+    "summary": "一名靠谱的JavaScript程序员应备的素质，从程序员的角度提出要去学习哪些知识，下面这篇文章从面试官的角度介绍到面试时可能会问到的一些问题。",
+    "content": "",
+    "source": "翻译",
+    "url": "http://blog.sourcing.io/interview-questions?utm_source=ourjs.com",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["Interview"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-03-01 10:00",
+    "updatedTime": "2016-03-01 10:00"
+}, {
+    "title": "连续子串的最大值(经典的DP问题)",
+    "alias": "dp-algorithm-problem",
+    "summary": "【问题描述】  在长度为N的整形数组中，求连续子串的和的最大值，要求复杂度为O(N)。 例如：1 2 3 -1 -20 100 34，结果为134。",
+    "content": "",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["Algorithm"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-02-01 10:00",
+    "updatedTime": "2016-02-01 10:00"
+}, {
+    "title": "瀑布流布局浅析",
+    "alias": "waterfall-layout",
+    "summary": "如果你经常网上冲浪，这样参差不齐的多栏布局，是不是很眼熟啊？",
+    "content": "",
+    "source": "淘宝网UED官方博客",
+    "url": "http://ued.taobao.org/blog/2011/09/waterfall/",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["CSS"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-01-01 10:00",
+    "updatedTime": "2016-01-01 10:00"
+}, {
+    "title": "详说BFC(Block Formatting Contexts 块级格式化上下文)",
+    "alias": "bfc",
+    "summary": "本文的主角 Block Formatting Contexts (块级格式化上下文)，本文会进一步说明 BFC 的特性。",
+    "content": "",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["CSS"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2015-09-01 10:00",
+    "updatedTime": "2015-09-01 10:00"
+}, {
+    "title": "响应式图像",
+    "alias": "responsive-image",
+    "summary": "自从2010年Ethan Marcotte开始讨论响应式网页设计，开发者和设计师们竞相寻求处理响应式图片的方法。这的确是一个棘手的问题 ，因为我们对同一个网站在众多设备宽度下，使用同一图像源。你愿意在一个大显示屏上显示模糊地、马赛克状的图像？你愿意在你的手机上加载一个巨大的（虽然更漂亮的）图像？这个问题令人左右为难。",
+    "content": "",
+    "source": "腾讯ISUX",
+    "url": "http://isux.tencent.com/",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["Uncategorized"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2015-09-01 10:00",
+    "updatedTime": "2015-09-01 10:00"
+}, {
+    "title": "理解 Promise 的工作原理",
+    "alias": "promise",
+    "summary": "Javascript 采用回调函数(callback)来处理异步编程。从同步编程到异步回调编程有一个适应的过程，但是如果出现多层回调嵌套，也就是我们常说的厄运的回调金字塔(Pyramid of Doom)，绝对是一种糟糕的编程体验。于是便有了 CommonJS 的 Promises/A 规范，用于解决回调金字塔问题。本文先介绍 Promises 相关规范，然后再通过解读一个迷你的 Promises 以加深理解。",
+    "content": "",
+    "source": "Coding 博客",
+    "url": "https://blog.coding.net/blog/how-do-promises-work",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["JavaScript"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2015-08-01 10:00",
+    "updatedTime": "2015-08-01 10:00"
+}]

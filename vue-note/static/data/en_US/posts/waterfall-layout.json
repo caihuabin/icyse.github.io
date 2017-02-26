@@ -1,0 +1,19 @@
+{
+    "title": "waterfall flow layout",
+    "alias": "waterfall-layout",
+    "summary": "如果你经常网上冲浪，这样参差不齐的多栏布局，是不是很眼熟啊？",
+    "content": "类似的布局，似乎一夜之间出现在国内外大大小小的网站上，比如 Pinterest (貌似是最早使用这种布局的网站了)，Mark之，蘑菇街，点点网，以及淘宝最新上线的“哇哦” 等等，倒是很流行哈~ 在淘宝即将上线的众多产品中，你还会大量看到这样的形式呢。\n\n这种布局适合于小数据块，每个数据块内容相近且没有侧重。通常，随着页面滚动条向下滚动，这种布局还会不断加载数据块并附加至当前尾部。所以，我们给这样的布局起了一个形象的名字 — 瀑布流式布局。\n\n![no image, can talk](/uploads/images/0802dcd1dc800c3b487cd98680615bd4.png \"by Cai\")\n\n### 几种实现方式\n\n随着越来越多设计师爱用这种布局，我们作为前端，要尽可能满足视觉/交互设计师的需求。所以，我们整理了下这种布局的几种实现方式，有三种:\n\n#### 1) 传统多列浮动。即 蘑菇街和哇哦 采用的方式，如下图所示:\n![no image, can talk](/uploads/images/a76feb59645b0c66638015ebfb64e3c8.png \"by Cai\")\n\n+ 各列固定宽度，并且左浮动；\n+ 一列中的数据块为一组，列中的每个数据块依次排列即可；\n+ 更多数据加载时，需要分别插入到不同的列上；\n##### 优点:\n\n布局简单，应该说没啥特别的难点；\n不用明确知道数据块高度，当数据块中有图片时，就不需要指定图片高度。\n##### 缺点:\n\n列数固定，扩展不易，当浏览器窗口大小变化时，只能固定的x列，如果要添加一列，很难调整数据块的排列；\n滚动加载更多数据时，还要指定插入到第几列中，还是不方便。\n#### 2) CSS3 定义。多列布局，排列出来的样子:\n![no image, can talk](/uploads/images/c5bb582047ca8ff0e7474e0e4a09186d.png \"by Cai\")\n\n    #container {\n        -webkit-column-count: 5；\n        /*-webkit-column-gap: 10px；\n        -webkit-column-rule: 5px solid #333；\n        -webkit-column-width: 210px；*/\n\n        -moz-column-count: 5；\n        /*-moz-column-gap: 20px；\n        -moz-column-rule: 5px solid #333；\n        -moz-column-width: 210px；*/\n\n        column-count: 5；\n        /*column-gap: 10px；\n        column-rule: 5px solid #333；\n        column-width: 210px；*/\n    }\n##### 优点:\n\n+ 直接 CSS 定义，最方便了；\n+ 扩展方便，直接往容器里添加内容即可。\n##### 缺点:\n\n+ 只有高级浏览器中才能使用；\n+还有一个缺点，他的数据块排列是从上到下排列到一定高度后，再把剩余元素依次添加到下一列，这个本质上就不一样了；\n+鉴于这两个主要缺点，注定了该方法只能局限于高端浏览器。\n\n#### 3) 绝对定位。\n![no image, can talk](/uploads/images/7548cf57c80d0d289371c033f69d4831.png \"by Cai\")\n\n##### 缺点:\n\n+ 需要实现知道数据块高度，如果其中包含图片，需要知道图片高度；\n+ JS 动态计算数据块位置，当窗口缩放频繁，可能会狂耗性能。",
+    "source": "淘宝网UED官方博客",
+    "url": "http://ued.taobao.org/blog/2011/09/waterfall/",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["CSS"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-01-01 10:00",
+    "updatedTime": "2016-01-01 10:00"
+}

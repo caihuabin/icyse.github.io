@@ -1,0 +1,19 @@
+{
+    "title": "Maximum value of continuous sub-string",
+    "alias": "dp-algorithm-problem",
+    "summary": "【问题描述】  在长度为N的整形数组中，求连续子串的和的最大值，要求复杂度为O(N)。 例如：1 2 3 -1 -20 100 34，结果为134。",
+    "content": "",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["Algorithm"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-02-01 10:00",
+    "updatedTime": "2016-02-01 10:00"
+}

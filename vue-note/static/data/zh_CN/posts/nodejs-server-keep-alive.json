@@ -1,0 +1,19 @@
+{
+    "title": "解决 nodejs 服务器崩溃的2种解决办法",
+    "alias": "nodejs-server-keep-alive",
+    "summary": "用node启动server后，发现服务器不稳定，经常crash。我是用ssh远程登录的，ssh远程通道中断，或者Ctrl+C,都会使nodejs server崩溃掉。",
+    "content": "## 一、node server 崩溃模拟\n*****\n### 1. ssh远程登录到nodejs的服务器，并启动node server\n\n\t[root@??? nodejs]# node server.js\n\tServer running at port 8000\n\t\n### 2. 中断ssh连接，这个时候在通过url访问，就不行了。\n\n## 二、nohup的解决办法\n******\n### 1. 启动node server\n\n      [root@??? nodejs]# nohup node server.js >> /var/log/nodejs/server_port_3000.log &\n\n启动node server，并放到后台执行，并且记录log日志，注意：这样记录日志，时间长了，日志文件会比较大，要自己写一个shell脚本，控制文件大小。\n\n      [root@??? nodejs]# nohup node server.js 1>/dev/null 2>&1 &   //这种方式，不记录log日志。\n注意：用nohup的方法，node server是没有守护进程的，放到后台运行，如果node server崩溃掉，web一样不能访问。\n\n### 2. 关闭node server\n\n      [root@??? ~]# ps aux|grep node    //查看node server\n\n      root     10680  0.0  0.3 826308 14556 pts/6    Sl   12:20   0:00 node server.js\n      root     15765  0.0  0.7 1031248 30144 ?       Sl   Feb25   0:01 node scripts/web-server.js\n      root     19648  0.0  0.0 103240   872 pts/3    S+   13:57   0:00 grep node\n\n      [root@??? ~]# kill 10680   //关闭10680的node server\n      [root@??? ~]# ps aux|grep node\n\n      root     15765  0.0  0.7 1031248 30144 ?       Sl   Feb25   0:01 node scripts/web-server.js\n      root     19653  0.0  0.0 103240   872 pts/3    S+   13:57   0:00 grep node\n\n## 三、forever工具\n*****\n### 1. 安装forever\n\n      # npm install forever\nforever目前只支持到node 0.8，如果装了node 0.10的，forever工具就不能用了。安装的时候会报出 warning forever wants 0.8, but has 0.10 ，虽然能安装成功，但是用不了。向上不兼容很坑爹。\n\n### 2. forever参数和用法\n\n      forever [start | stop | stopall | list] [options] SCRIPT [script options]\n### 3. forever实例\n\n      forever start server.js    //启动node server\n      forever list                    //查看启动的node server\n      0 server.js [ 24597, 24596 ]\n\n      forever stop 0                  //停止第0个node server\n      Forever stopped process:\n      0 server.js [ 24611, 24596 ]",
+    "source": "",
+    "url": "",
+    "user": {
+        "username": "Icyse"
+    },
+    "imgList": [],
+    "categoryList": ["NodeJs"],
+    "commentList": [],
+    "viewCount": 0,
+    "commentCount": 0,
+    "voteCount": 0,
+    "createdTime": "2016-01-01 10:00",
+    "updatedTime": "2016-01-01 10:00"
+}
