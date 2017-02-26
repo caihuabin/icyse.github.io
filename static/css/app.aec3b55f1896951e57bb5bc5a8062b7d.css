@@ -1497,11 +1497,13 @@ a:hover {
 .fade-enter,
 .fade-enter-active {
   animation: fade-enter .8s linear forwards;
+  -webkit-animation: fade-enter .8s linear forwards;
 }
 
 .fade-leave,
 .fade-leave-active {
   animation: fade-leave .8s linear forwards;
+  -webkit-animation: fade-leave .8s linear forwards;
 }
 
 @keyframes fade-enter {
@@ -1512,8 +1514,24 @@ a:hover {
     opacity: 1;
   }
 }
+@-webkit-keyframes fade-enter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-@keyframes fade-enter {
+@keyframes fade-leave {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-leave {
   0% {
     opacity: 1;
   }
@@ -1525,20 +1543,36 @@ a:hover {
 .scale-enter,
 .scale-enter-active {
   animation: scale-enter .8s linear forwards;
+  -webkit-animation: scale-enter .8s linear forwards;
 }
 
 .scale-leave,
 .scale-leave-active {
   animation: scale-leave .8s linear forwards;
+  -webkit-animation: scale-leave .8s linear forwards;
 }
 
 @keyframes scale-enter {
   0% {
     transform: scale(0);
+    -webkit-transform: scale(0);
     opacity: 0;
   }
   100% {
     transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scale-enter {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
     opacity: 1;
   }
 }
@@ -1546,6 +1580,7 @@ a:hover {
 @keyframes scale-leave {
   0% {
     transform: scale(1);
+    -webkit-transform: scale(1);
     opacity: 1;
   }
   100% {
@@ -1553,29 +1588,66 @@ a:hover {
     opacity: 0;
   }
 }
+@-webkit-keyframes scale-leave {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
 
 .animate-pop-up-enter,
 .animate-pop-up-enter-active {
   animation: pop-up-enter .8s ease-in forwards;
+  -webkit-animation: pop-up-enter .8s ease-in forwards;
 }
 
 .animate-pop-up-leave,
 .animate-pop-leave-active {
   animation: pop-up-leave .8s ease-in forwards;
+  -webkit-animation: pop-up-leave .8s ease-in forwards;
 }
 
 @keyframes pop-up-enter {
   0% {
     transform: scale(0.4);
+    -webkit-transform: scale(0.4);
     opacity: 0;
   }
   70% {
     transform: scale(0.7);
+    -webkit-transform: scale(0.7);
     opacity: .8;
     animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
   }
   100% {
     transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes pop-up-enter {
+  0% {
+    transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    opacity: .8;
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
     opacity: 1;
   }
 }
@@ -1583,15 +1655,38 @@ a:hover {
 @keyframes pop-up-leave {
   0% {
     transform: scale(1);
+    -webkit-transform: scale(1);
     opacity: 1;
   }
   70% {
     transform: scale(0.7);
+    -webkit-transform: scale(0.7);
     opacity: .8;
     animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
   }
   100% {
     transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pop-up-leave {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    opacity: .8;
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+  }
+  100% {
+    transform: scale(0.4);
+    -webkit-transform: scale(0.4);
     opacity: 0;
   }
 }
@@ -1599,25 +1694,33 @@ a:hover {
 .slide-left-enter-active {
   opacity: 1;
   transition: .8s;
+  -webkit-transition: .8s;
   transform: translateX(100%);
+  -webkit-transform: translateX(100%);
 }
 
 .slide-right-leave-active {
   opacity: 0;
   transition: .8s;
+  -webkit-transition: .8s;
   transform: translateX(100%);
+  -webkit-transform: translateX(100%);
 }
 
 .slide-right-enter-active {
   opacity: 1;
   transition: .8s;
+  -webkit-transition: .8s;
   transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
 }
 
 .slide-left-leave-active {
   opacity: 0;
   transition: .8s;
+  -webkit-transition: .8s;
   transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
 }
 
 @media screen and (min-width: 48em) {
@@ -1645,22 +1748,30 @@ a:hover {
   .slide-left-enter-active {
     opacity: 1;
     transition: .8s;
+    -webkit-transition: .8s;
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
   }
   .slide-right-leave-active {
     opacity: 0;
     transition: .8s;
+    -webkit-transition: .8s;
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
   }
   .slide-right-enter-active {
     opacity: 1;
     transition: .8s;
+    -webkit-transition: .8s;
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
   }
   .slide-left-leave-active {
     opacity: 0;
     transition: .8s;
+    -webkit-transition: .8s;
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
   }
 }
 
@@ -1674,4 +1785,4 @@ a:hover {
   }
 }
 
-/*# sourceMappingURL=app.aec3b55f1896951e57bb5bc5a8062b7d.css.map*/
+/*# sourceMappingURL=app.22eca32264d9fbd9e48707b4ec16a09b.css.map*/
